@@ -1,0 +1,80 @@
+[
+  {
+    "id": "Ionia",
+    "color": "#9b59b6",
+    "description": "Terre mystique où se mêlent harmonie et conflit, Ionia est un archipel luxuriant d'équilibre spirituel. Ses habitants pratiquent un art martial raffiné fondé sur la méditation et la nature. Marquée par la guerre contre Noxus, la région cherche à retrouver sa paix intérieure tout en honorant ses traditions ancestrales. Ahri, Yasuo, Irelia, Karma et Shen incarnent cette dualité entre grâce et puissance.",
+    "image": "ionia.jpg"
+  },
+  {
+    "id": "Demacia",
+    "color": "#5a8dee",
+    "description": "Royaume de l’honneur, de la justice et du devoir, Demacia se dresse comme un bastion d’ordre et de vertu. Sa société valorise la loyauté, la discipline et le service du bien commun. Pourtant, derrière ses murs d’albâtre, la peur de la magie et le poids des traditions menacent son idéal. Garen, Lux, Jarvan IV et Fiora défendent fièrement ses valeurs, malgré les fractures internes.",
+    "image": "demacia.jpg"
+  },
+  {
+    "id": "Noxus",
+    "color": "#c0392b",
+    "description": "Empire conquérant où la force et le mérite priment sur la naissance. Noxus est un creuset d’ambition, de stratégie et de puissance brute. Sa diversité culturelle et militaire fait sa grandeur, mais aussi sa cruauté. Darius, Katarina, Swain et Vladimir incarnent la brutalité et l’intelligence politique de l’empire.",
+    "image": "noxus.jpg"
+  },
+  {
+    "id": "Piltover",
+    "color": "#f39c12",
+    "description": "Cité du progrès et de l’innovation, Piltover rayonne sur Runeterra comme le joyau de la technologie hextech. Ses inventeurs et artisans façonnent l’avenir à travers la science et l’ingéniosité. Mais sous la surface dorée, les inégalités et la corruption menacent son équilibre. Jayce, Vi et Caitlyn représentent l’élite et la vigilance de la Cité du Progrès.",
+    "image": "piltover.jpg"
+  },
+  {
+    "id": "Zaun",
+    "color": "#16a085",
+    "description": "Cité souterraine anarchique et toxique, Zaun est le miroir sombre de Piltover. Dans ses ruelles enfumées, les alchimistes et inventeurs testent leurs créations sans lois ni limites. Malgré la misère, une créativité brute et une solidarité inattendue y naissent. Jinx, Ekko, Singed et Viktor en sont les enfants turbulents.",
+    "image": "zaun.jpg"
+  },
+  {
+    "id": "Shurima",
+    "color": "#d4ac0d",
+    "description": "Ancien empire englouti sous le désert, Shurima renaît lentement de ses sables millénaires. Autrefois bénie par le soleil et la magie divine, la terre de Shurima garde les vestiges d’une grandeur perdue. Le retour d’Azir ravive les espoirs… et les rivalités. Nasus, Renekton, Azir et Sivir portent l’héritage du désert doré.",
+    "image": "shurima.jpg"
+  },
+  {
+    "id": "Freljord",
+    "color": "#5dade2",
+    "description": "Royaume glacé des tribus du Nord, Freljord est une terre de guerre, de courage et de traditions. Ses peuples luttent pour la survie dans un hiver éternel, unis ou divisés par d’anciennes prophéties. Ashe, Sejuani et Lissandra incarnent les trois visions du destin du Freljord.",
+    "image": "freljord.jpg"
+  },
+  {
+    "id": "Bilgewater",
+    "color": "#1abc9c",
+    "description": "Port pirate bouillonnant où règnent trahison, or et poudre à canon. Bilgewater est un refuge pour les aventuriers, les criminels et les chasseurs de monstres. Derrière les tavernes et les docks, les alliances changent au gré des marées. Miss Fortune, Gangplank et Pyke y imposent leurs propres lois.",
+    "image": "bilgewater.jpg"
+  },
+  {
+  "id": "BandleCity",
+    "color": "#e67e22",
+    "description": "Royaume enchanteur des yordles, Bandle City est un monde de joie, de curiosité et de chaos maîtrisé. Ses habitants voient la vie comme une aventure sans fin, même si leurs facéties déroutent les mortels. Teemo, Lulu, Veigar et Tristana représentent la magie et la malice des yordles.",
+    "image": "bandle.jpg"
+  },
+  {
+    "id": "Ixtal",
+    "color": "#27ae60",
+    "description": "Jungle luxuriante et isolée, Ixtal abrite les maîtres de la magie élémentaire. Les habitants y vivent en parfaite symbiose avec la nature et considèrent le reste du monde comme corrompu et décadent. Qiyana, Neeko et Nidalee défendent l’harmonie et la pureté de leur royaume caché.",
+    "image": "ixtal.jpg"
+  },
+  {
+  "id": "Void",
+    "color": "#8e44ad",
+    "description": "Dimension cauchemardesque d’où émergent des entités d’horreur pure, le Néant dévore tout sur son passage. Nul ne comprend réellement sa nature, si ce n’est qu’il cherche à consumer la réalité elle-même. Kai’Sa, Cho’Gath, Vel’Koz et Kha’Zix en sont les témoins… ou les instruments.",
+    "image": "neant.jpg"
+  },
+  {
+    "id": "Targon",
+    "color": "#f5e663",
+    "description": "Au sommet du Mont Targon, les mortels affrontent l’impossible pour atteindre les étoiles. C’est un lieu sacré où les êtres humains peuvent devenir des avatars célestes. Entre lumière et obscurité, Targon incarne la lutte éternelle des forces cosmiques. Leona, Diana, Pantheon et Taric représentent ses aspects divins.",
+    "image": "targon.jpg"
+  },
+  {
+  "id": "ShadowIsles",
+    "color": "#34495e",
+    "description": "Archipel maudit recouvert par la Brume noire, les Îles Obscures sont un lieu de désespoir et de damnation. Jadis bénies, elles furent corrompues par un cataclysme magique. Les âmes perdues y errent pour l’éternité. Thresh, Hecarim, Viego et Kalista sont les spectres de sa tragédie.",
+    "image": "obscures.jpg"
+  }
+]
