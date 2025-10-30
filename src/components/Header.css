@@ -17,6 +17,7 @@
   font-size: 1.3rem;
   color: var(--accent);
 }
+
 .logo span {
   color: var(--text);
 }
@@ -40,6 +41,7 @@
   font-size: 1.1rem;
   padding-bottom: 4px;
 }
+
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
   color: var(--accent);
@@ -71,6 +73,7 @@
   background: none;
   font-size: 1rem;
 }
+
 .dropdown-menu a:hover,
 .dropdown-menu a.active {
   color: var(--accent);
@@ -78,8 +81,15 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logo-area {
@@ -95,6 +105,7 @@
   filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
   transition: transform 0.2s ease;
 }
+
 .logo-icon:hover {
   transform: scale(1.05) rotate(-2deg);
 }
@@ -108,6 +119,7 @@
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5px;
 }
+
 .logo-text span {
   background: none;
   color: var(--text);

@@ -18,7 +18,7 @@ export function championSquare(version, imageName) { // Génère l'URL de l'icô
 }
 
 export async function getChampionDetail(version, champId, locale = "fr_FR") { // Récupère les détails d'un champion spécifique
-
+  
   const url = DDRAGON + "/cdn/" + version + "/data/" + locale + "/champion/" + champId + ".json";
   const { data } = await axios.get(url);
   return data.data[champId];
@@ -36,4 +36,10 @@ export function spellIcon(version, fileName) { // Génère l'URL de l'icône d'u
 }
 export function passiveIcon(version, fileName) { // Génère l'URL de l'icône passive d'un champion
   return DDRAGON + "/cdn/" + version + "/img/passive/" + fileName;
+}
+
+export async function getItemList(version, locale = "fr_FR") { // Récupère la liste des items 
+  const url = DDRAGON + "/cdn/" + version + "/data/" + locale + "/item.json";
+  const { data } = await axios.get(url);
+  return Object.values(data.data); 
 }

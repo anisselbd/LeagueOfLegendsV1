@@ -12,7 +12,7 @@ export default function Regions() {
 
   return (
     <div className="p-6">
-  <h1 className="text-3xl font-bold mb-6" style={{textAlign: 'center', fontFamily: 'Cinzel, serif'}}>Régions de Runeterra</h1>
+      <h1 className="text-3xl font-bold mb-6" style={{ textAlign: 'center', fontFamily: 'Cinzel, serif' }}>Régions de Runeterra</h1>
       <div className="regions-grid">
         {regions.map((r) => (
           <article

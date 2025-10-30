@@ -30,7 +30,7 @@ export default function Champions() {
   return (
     <div className="p-6">
       <div className="flex mb-4" style={{ gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-        <h1 className="text-3xl font-bold mb-6" style={{textAlign: 'center', fontFamily: 'Cinzel, serif'}}>Champions League of Legends</h1>
+        <h1 className="text-3xl font-bold mb-6" style={{ textAlign: 'center', fontFamily: 'Cinzel, serif' }}>Champions League of Legends</h1>
 
         {/* Affichage du filtre actif (si présent) */}
         {regionFilter && (
@@ -64,32 +64,32 @@ export default function Champions() {
       )}
 
       <div className="champions-grid">
-          {filtered.map((c) => {
-            // Image splash officielle : https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{championName}_0.jpg
-            const splashUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${c.id}_0.jpg`;
-            return (
-              <Link
-                key={c.id}
-                to={`/champion/${c.id}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <div className="champ-card">
-                  <img
-                    src={splashUrl}
-                    alt={c.name}
-                    className="champ-img"
-                    loading="lazy"
-                    style={{ objectFit: "cover", width: "100%", height: "180px", borderRadius: "8px" }}
-                  />
-                  <div className="champ-body">
-                    <h3 className="champ-name">{c.name}</h3>
-                    <p className="champ-title">{c.title}</p>
-                    <p className="champ-region">Région : {regionMap[c.id] ?? "—"}</p>
-                  </div>
+        {filtered.map((c) => {
+          // Image splash officielle : https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{championName}_0.jpg
+          const splashUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${c.id}_0.jpg`;
+          return (
+            <Link
+              key={c.id}
+              to={`/champion/${c.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <div className="champ-card">
+                <img
+                  src={splashUrl}
+                  alt={c.name}
+                  className="champ-img"
+                  loading="lazy"
+                  style={{ objectFit: "cover", width: "100%", height: "180px", borderRadius: "8px" }}
+                />
+                <div className="champ-body">
+                  <h3 className="champ-name">{c.name}</h3>
+                  <p className="champ-title">{c.title}</p>
+                  <p className="champ-region">Région : {regionMap[c.id] ?? "—"}</p>
                 </div>
-              </Link>
-            );
-          })}
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

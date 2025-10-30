@@ -47,7 +47,7 @@ export default function Home() {
       style={{
         textAlign: 'center',
         padding: '3rem 1rem',
-        minHeight: '80vh',
+        minHeight: '90vh',
         backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${heroBanner})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -72,13 +72,14 @@ export default function Home() {
       >
         Bienvenue sur League of Legends Explorer
       </h1>
-      <p style={{fontSize: '1.2rem', marginBottom: '2rem', textShadow: '0 1px 6px #000'}}>
+      <p style={{ fontSize: '1.2rem', marginBottom: '2rem', textShadow: '0 1px 6px #000' }}>
         Découvrez les champions, les régions et testez vos connaissances sur l'univers de League of Legends !
       </p>
-      <div style={{display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap'}}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
         <HomeButton to="/champions">Champions</HomeButton>
         <HomeButton to="/regions">Régions</HomeButton>
         <HomeButton to="/quiz">Quiz</HomeButton>
+        <HomeButton to="/items">Items</HomeButton>
       </div>
     </section>
   );

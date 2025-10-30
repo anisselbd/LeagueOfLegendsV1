@@ -1,3 +1,11 @@
+/* Effet de survol pour les cards d'items */
+.item-card-link:hover .item-card,
+.item-card-link:focus .item-card {
+  transform: scale(1.07);
+  box-shadow: 0 6px 24px #c89b3c55, 0 2px 8px #0006;
+  border-color: #c89b3c;
+  z-index: 2;
+}
 /* Champ de recherche personnalisé */
 input[type="text"].search-bar {
   background: #1d2734;

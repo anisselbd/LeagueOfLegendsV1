@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="brand">
-          
+
           <span className="brand-text">Anisselbd</span>
         </div>
 

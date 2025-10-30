@@ -55,6 +55,7 @@ export default function Header() {
                 <NavLink to="/regions" onClick={() => setOpen(false)}>Régions</NavLink>
                 <NavLink to="/quiz" onClick={() => setOpen(false)}>Quiz</NavLink>
                 <NavLink to="/summoner" onClick={() => setOpen(false)}>Invocateur</NavLink>
+                <NavLink to="/items" onClick={() => setOpen(false)}>Items</NavLink>
               </div>
             )}
           </nav>

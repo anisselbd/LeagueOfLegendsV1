@@ -64,8 +64,8 @@ const getChoiceStyle = (isSel, isGood, isBad) => ({
   background: isGood
     ? 'linear-gradient(90deg, #38b000 0%, #a3ffb0 100%)'
     : isBad
-    ? 'linear-gradient(90deg, #e74c3c 0%, #ffb3b3 100%)'
-    : quizButton.background,
+      ? 'linear-gradient(90deg, #e74c3c 0%, #ffb3b3 100%)'
+      : quizButton.background,
   transform: isSel ? 'scale(0.97)' : 'none',
   boxShadow: isSel ? '0 0 0 3px #c89b3c55' : quizButton.boxShadow,
   pointerEvents: isGood || isBad ? 'none' : 'auto',
@@ -180,38 +180,38 @@ export default function Quiz() {
     }, 900);
   };
 
-  if (!ready) return <p className="p-6 text-lg" style={{fontFamily: "'Cinzel', serif"}}>Chargement du quiz…</p>;
+  if (!ready) return <p className="p-6 text-lg" style={{ fontFamily: "'Cinzel', serif" }}>Chargement du quiz…</p>;
 
   if (!started) {
     return (
-      <div className="p-6" style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'70vh',position:'relative'}}>
-        <Link to="/" style={{position:'absolute',left:0,top:0,margin:'1.5rem',zIndex:2,textDecoration:'none'}}>
+      <div className="p-6" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '70vh', position: 'relative' }}>
+        <Link to="/" style={{ position: 'absolute', left: 0, top: 0, margin: '1.5rem', zIndex: 2, textDecoration: 'none' }}>
           <span style={{
-            display:'inline-block',
-            padding:'0.6rem 1.5rem',
-            borderRadius:'2rem',
-            border:'2.5px solid #c89b3c',
-            background:'#181818cc',
-            color:'#c89b3c',
-            fontWeight:700,
+            display: 'inline-block',
+            padding: '0.6rem 1.5rem',
+            borderRadius: '2rem',
+            border: '2.5px solid #c89b3c',
+            background: '#181818cc',
+            color: '#c89b3c',
+            fontWeight: 700,
             fontFamily: "'Cinzel', serif",
-            fontSize:'1rem',
-            boxShadow:'0 2px 8px #0002',
-            transition:'transform 0.15s',
-            cursor:'pointer',
+            fontSize: '1rem',
+            boxShadow: '0 2px 8px #0002',
+            transition: 'transform 0.15s',
+            cursor: 'pointer',
           }}
-            onMouseEnter={e=>e.currentTarget.style.transform='scale(1.07)'}
-            onMouseLeave={e=>e.currentTarget.style.transform='none'}
+            onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.07)'}
+            onMouseLeave={e => e.currentTarget.style.transform = 'none'}
           >
             ← Retour
           </span>
         </Link>
         <div style={cardStyle}>
-          <h1 style={{fontSize:'2rem',marginBottom:12,textAlign:'center',color:'#fff',textShadow:'0 2px 8px #000, 0 0 2px #c89b3c',fontFamily: "'Cinzel', serif"}}>Quiz League of Legends</h1>
-          <p className="text" style={{ marginBottom: 16, textAlign:'center' }}>
+          <h1 style={{ fontSize: '2rem', marginBottom: 12, textAlign: 'center', color: '#fff', textShadow: '0 2px 8px #000, 0 0 2px #c89b3c', fontFamily: "'Cinzel', serif" }}>Quiz League of Legends</h1>
+          <p className="text" style={{ marginBottom: 16, textAlign: 'center' }}>
             10 questions aléatoires sur les régions, rôles et titres des champions.
           </p>
-          <div style={{display:'flex',justifyContent:'center',marginTop:'2rem'}}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <QuizButton onClick={startQuiz}>▶ Lancer le quiz</QuizButton>
           </div>
         </div>
@@ -222,15 +222,15 @@ export default function Quiz() {
   if (finished) {
     const ratio = Math.round((score / questions.length) * 100);
     const msg = ratio >= 80 ? "Grand maître du lore !" :
-                ratio >= 60 ? "Solide connaissance !" :
-                ratio >= 40 ? "Pas mal, continue !" : "On s’échauffe 🔥";
+      ratio >= 60 ? "Solide connaissance !" :
+        ratio >= 40 ? "Pas mal, continue !" : "On s’échauffe 🔥";
     return (
-      <div className="p-6" style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'70vh'}}>
+      <div className="p-6" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '70vh' }}>
         <div style={cardStyle}>
-          <h1 style={{fontSize:'2rem',marginBottom:12,textAlign:'center',color:'#fff',textShadow:'0 2px 8px #000, 0 0 2px #c89b3c',fontFamily: "'Cinzel', serif"}}>Résultats</h1>
-          <p className="text" style={{fontSize:'1.2rem',textAlign:'center'}}>Score : <strong>{score}/{questions.length}</strong> — {ratio}%</p>
-          <p className="text" style={{ marginTop: 8, textAlign:'center',fontWeight:600 }}>{msg}</p>
-          <div style={{ marginTop: 16, display: "flex", gap: 10, justifyContent:'center' }}>
+          <h1 style={{ fontSize: '2rem', marginBottom: 12, textAlign: 'center', color: '#fff', textShadow: '0 2px 8px #000, 0 0 2px #c89b3c', fontFamily: "'Cinzel', serif" }}>Résultats</h1>
+          <p className="text" style={{ fontSize: '1.2rem', textAlign: 'center' }}>Score : <strong>{score}/{questions.length}</strong> — {ratio}%</p>
+          <p className="text" style={{ marginTop: 8, textAlign: 'center', fontWeight: 600 }}>{msg}</p>
+          <div style={{ marginTop: 16, display: "flex", gap: 10, justifyContent: 'center' }}>
             <QuizButton onClick={startQuiz}>↻ Rejouer</QuizButton>
             <a style={quizButton} href="/quiz">Retour au quiz</a>
             <a style={quizButton} href="/">Retour aux champions</a>
@@ -241,37 +241,37 @@ export default function Quiz() {
   }
 
   return (
-    <div className="p-6" style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'70vh',background:'none',position:'relative'}}>
-      <Link to="/" style={{position:'absolute',left:0,top:0,margin:'1.5rem',zIndex:2,textDecoration:'none'}}>
+    <div className="p-6" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '70vh', background: 'none', position: 'relative' }}>
+      <Link to="/" style={{ position: 'absolute', left: 0, top: 0, margin: '1.5rem', zIndex: 2, textDecoration: 'none' }}>
         <span style={{
-          display:'inline-block',
-          padding:'0.6rem 1.5rem',
-          borderRadius:'2rem',
-          border:'2.5px solid #c89b3c',
-          background:'#181818cc',
-          color:'#c89b3c',
-          fontWeight:700,
+          display: 'inline-block',
+          padding: '0.6rem 1.5rem',
+          borderRadius: '2rem',
+          border: '2.5px solid #c89b3c',
+          background: '#181818cc',
+          color: '#c89b3c',
+          fontWeight: 700,
           fontFamily: "'Cinzel', serif",
-          fontSize:'1rem',
-          boxShadow:'0 2px 8px #0002',
-          transition:'transform 0.15s',
-          cursor:'pointer',
+          fontSize: '1rem',
+          boxShadow: '0 2px 8px #0002',
+          transition: 'transform 0.15s',
+          cursor: 'pointer',
         }}
-          onMouseEnter={e=>e.currentTarget.style.transform='scale(1.07)'}
-          onMouseLeave={e=>e.currentTarget.style.transform='none'}
+          onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.07)'}
+          onMouseLeave={e => e.currentTarget.style.transform = 'none'}
         >
           ← Retour
         </span>
       </Link>
       <div style={cardStyle}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
-          <h2 style={{ margin: 0, fontFamily: "'Cinzel', serif", color:'#fff', fontSize:'1.3rem', textShadow:'0 1px 4px #000, 0 0 2px #c89b3c' }}>
+          <h2 style={{ margin: 0, fontFamily: "'Cinzel', serif", color: '#fff', fontSize: '1.3rem', textShadow: '0 1px 4px #000, 0 0 2px #c89b3c' }}>
             Question {idx + 1} / {questions.length}
           </h2>
-          <div style={{...quizButton, fontSize:'1rem', padding:'0.5rem 1.2rem', background:'#232526', border:'2px solid #c89b3c', color:'#c89b3c', boxShadow:'none'}}>Score : {score}</div>
+          <div style={{ ...quizButton, fontSize: '1rem', padding: '0.5rem 1.2rem', background: '#232526', border: '2px solid #c89b3c', color: '#c89b3c', boxShadow: 'none' }}>Score : {score}</div>
         </div>
 
-        <p className="text" style={{ fontSize: "1.15rem", marginTop: 18, marginBottom: 18, textAlign:'center', fontWeight:600, color:'#fff', fontFamily: "'Cinzel', serif" }}>
+        <p className="text" style={{ fontSize: "1.15rem", marginTop: 18, marginBottom: 18, textAlign: 'center', fontWeight: 600, color: '#fff', fontFamily: "'Cinzel', serif" }}>
           {current.question}
         </p>
 

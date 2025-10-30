@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useChampions } from "../store/useChampions";
-import {getChampionDetail, splashUrl, loadingUrl, spellIcon, passiveIcon } from "../api/ddragon";
+import { getChampionDetail, splashUrl, loadingUrl, spellIcon, passiveIcon } from "../api/ddragon";
 import { motion, AnimatePresence } from "framer-motion";
 
 function SkinButton({ skin, idx, champId, champ, active, onClick, name }) {
@@ -41,7 +41,7 @@ function SkinButton({ skin, idx, champId, champ, active, onClick, name }) {
 }
 
 export default function ChampionDetail() {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const { version, fetchAll } = useChampions();
   const [champ, setChamp] = useState(null);
   const [skinIndex, setSkinIndex] = useState(0);
@@ -149,8 +149,8 @@ export default function ChampionDetail() {
             <div key={sp.id} className="ability">
               <img className="ability-icon" src={spellIcon(v, sp.image.full)} alt={sp.name} />
               <div>
-                <h3 className="ability-name">{["A/Q","Z/W","E","R"][i] ?? ""} — {sp.name}</h3>
-                <p className="text" dangerouslySetInnerHTML={{ __html: sp.description }} /> 
+                <h3 className="ability-name">{["A/Q", "Z/W", "E", "R"][i] ?? ""} — {sp.name}</h3>
+                <p className="text" dangerouslySetInnerHTML={{ __html: sp.description }} />
               </div>
             </div>
           ))}

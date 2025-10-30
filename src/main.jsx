@@ -11,6 +11,8 @@ import Regions from "./pages/Regions";
 import Quiz from "./pages/Quiz";
 import RegionDetail from "./pages/RegionDetail";
 import Home from "./pages/Home";
+import Item from "./pages/Item";
+import ItemDetail from "./pages/ItemDetail";
 import "./index.css";
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
               <Route path="/region/:id" element={<RegionDetail />} />
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/summoner" element={<div className="p-6">Page Invocateur (à venir)</div>} />
+              <Route path="/items" element={<Item />} />
+              <Route path="/items/:id" element={<ItemDetail />} />
             </Routes>
           </motion.div>
         </AnimatePresence>
