@@ -50,7 +50,8 @@ export default function Header() {
             </button>
             {open && (
               <div className="dropdown-menu">
-                <NavLink to="/" end onClick={() => setOpen(false)}>Champions</NavLink>
+                <NavLink to="/" end onClick={() => setOpen(false)}>Accueil</NavLink>
+                <NavLink to="/champions" end onClick={() => setOpen(false)}>Champions</NavLink>
                 <NavLink to="/regions" onClick={() => setOpen(false)}>Régions</NavLink>
                 <NavLink to="/quiz" onClick={() => setOpen(false)}>Quiz</NavLink>
                 <NavLink to="/summoner" onClick={() => setOpen(false)}>Invocateur</NavLink>

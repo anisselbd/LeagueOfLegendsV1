@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useChampions } from "../store/useChampions";
 import {getChampionDetail, splashUrl, loadingUrl, spellIcon, passiveIcon } from "../api/ddragon";
+import { motion, AnimatePresence } from "framer-motion";
 
 function SkinButton({ skin, idx, champId, champ, active, onClick, name }) {
   const [imgOk, setImgOk] = useState(true);
@@ -63,6 +64,12 @@ export default function ChampionDetail() {
     })();
   }, [id, version, fetchAll]);
 
+
+  // Scroll en haut lors du changement de skin
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [skinIndex]);
+
   if (loading) return <p className="p-6 text-lg">Chargement…</p>;
   if (err) return <p className="p-6 text-red-600">Erreur : {err}</p>;
   if (!champ) return <p className="p-6">Champion introuvable.</p>;
@@ -74,11 +81,23 @@ export default function ChampionDetail() {
     <div>
       {/* Hero avec splash */}
       <div className="hero">
-        <img className="hero-bg" src={splashUrl(id, skinIndex)} alt={`${name} splash`} />
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={skinIndex}
+            className="hero-bg"
+            src={splashUrl(id, skinIndex)}
+            alt={`${name} splash`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "brightness(.55) saturate(1.1)" }}
+          />
+        </AnimatePresence>
         <div className="hero-overlay" />
         <div className="hero-content">
           <div>
-            <Link to="/" className="back-btn">← Retour aux champions </Link>
+            <Link to="/champions" className="back-btn">← Retour aux champions </Link>
             <h1 className="hero-title">{name}</h1>
             <p className="hero-sub">{title}</p>
             <div className="chips">

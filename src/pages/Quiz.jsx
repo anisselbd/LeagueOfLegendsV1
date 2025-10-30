@@ -1,6 +1,75 @@
 import { useEffect, useMemo, useState } from "react";
 import { useChampions } from "../store/useChampions";
 import regionMap from "../data/championRegions.json";
+import { Link } from "react-router-dom";
+import '../index.css';
+
+
+
+
+const cardStyle = {
+  background: 'rgba(20, 24, 34, 0.98)',
+  borderRadius: '22px',
+  boxShadow: '0 8px 32px 0 rgba(0,0,0,0.45)',
+  padding: '2.5rem 2rem',
+  maxWidth: 600,
+  margin: '2rem auto',
+  border: '2.5px solid #c89b3c',
+  fontFamily: "'Cinzel', serif"
+};
+
+const quizButton = {
+  padding: '1.1rem 2.2rem',
+  fontSize: '1.1rem',
+  fontWeight: 700,
+  borderRadius: '2rem',
+  border: '2.5px solid #c89b3c',
+  background: 'linear-gradient(90deg, #232526 0%, #414345 100%)',
+  color: '#fff',
+  textDecoration: 'none',
+  boxShadow: '0 4px 18px 0 rgba(0,0,0,0.18)',
+  cursor: 'pointer',
+  transition: 'transform 0.15s, box-shadow 0.15s, border-color 0.15s, background 0.15s',
+  margin: '0.5rem 0',
+  letterSpacing: '1px',
+  outline: 'none',
+  fontFamily: "'Cinzel', serif",
+};
+
+
+
+
+function QuizButton({ children, ...props }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <button
+      {...props}
+      style={{
+        ...quizButton,
+        ...(props.style || {}),
+        transform: hover ? 'scale(1.07)' : 'none',
+      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {children}
+    </button>
+  );
+}
+
+const getChoiceStyle = (isSel, isGood, isBad) => ({
+  ...quizButton,
+  borderColor: isGood ? '#38b000' : isBad ? '#e74c3c' : '#c89b3c',
+  color: isGood ? '#38b000' : isBad ? '#e74c3c' : '#fff',
+  background: isGood
+    ? 'linear-gradient(90deg, #38b000 0%, #a3ffb0 100%)'
+    : isBad
+    ? 'linear-gradient(90deg, #e74c3c 0%, #ffb3b3 100%)'
+    : quizButton.background,
+  transform: isSel ? 'scale(0.97)' : 'none',
+  boxShadow: isSel ? '0 0 0 3px #c89b3c55' : quizButton.boxShadow,
+  pointerEvents: isGood || isBad ? 'none' : 'auto',
+});
 
 const pick = (arr, n) => {
   const a = [...arr];
@@ -111,16 +180,41 @@ export default function Quiz() {
     }, 900);
   };
 
-  if (!ready) return <p className="p-6 text-lg">Chargement du quiz…</p>;
+  if (!ready) return <p className="p-6 text-lg" style={{fontFamily: "'Cinzel', serif"}}>Chargement du quiz…</p>;
 
   if (!started) {
     return (
-      <div className="p-6">
-        <h1 className="text-2xl font-bold mb-2">Quiz League of Legends</h1>
-        <p className="text" style={{ marginBottom: 16 }}>
-          10 questions aléatoires sur les régions, rôles et titres des champions.
-        </p>
-        <button className="chip" onClick={startQuiz}>▶ Lancer le quiz</button>
+      <div className="p-6" style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'70vh',position:'relative'}}>
+        <Link to="/" style={{position:'absolute',left:0,top:0,margin:'1.5rem',zIndex:2,textDecoration:'none'}}>
+          <span style={{
+            display:'inline-block',
+            padding:'0.6rem 1.5rem',
+            borderRadius:'2rem',
+            border:'2.5px solid #c89b3c',
+            background:'#181818cc',
+            color:'#c89b3c',
+            fontWeight:700,
+            fontFamily: "'Cinzel', serif",
+            fontSize:'1rem',
+            boxShadow:'0 2px 8px #0002',
+            transition:'transform 0.15s',
+            cursor:'pointer',
+          }}
+            onMouseEnter={e=>e.currentTarget.style.transform='scale(1.07)'}
+            onMouseLeave={e=>e.currentTarget.style.transform='none'}
+          >
+            ← Retour
+          </span>
+        </Link>
+        <div style={cardStyle}>
+          <h1 style={{fontSize:'2rem',marginBottom:12,textAlign:'center',color:'#fff',textShadow:'0 2px 8px #000, 0 0 2px #c89b3c',fontFamily: "'Cinzel', serif"}}>Quiz League of Legends</h1>
+          <p className="text" style={{ marginBottom: 16, textAlign:'center' }}>
+            10 questions aléatoires sur les régions, rôles et titres des champions.
+          </p>
+          <div style={{display:'flex',justifyContent:'center',marginTop:'2rem'}}>
+            <QuizButton onClick={startQuiz}>▶ Lancer le quiz</QuizButton>
+          </div>
+        </div>
       </div>
     );
   }
@@ -131,52 +225,70 @@ export default function Quiz() {
                 ratio >= 60 ? "Solide connaissance !" :
                 ratio >= 40 ? "Pas mal, continue !" : "On s’échauffe 🔥";
     return (
-      <div className="p-6">
-        <h1 className="text-2xl font-bold mb-2">Résultats</h1>
-        <p className="text">Score : <strong>{score}/{questions.length}</strong> — {ratio}%</p>
-        <p className="text" style={{ marginTop: 8 }}>{msg}</p>
-        <div style={{ marginTop: 16, display: "flex", gap: 10 }}>
-          <button className="chip" onClick={startQuiz}>↻ Rejouer</button>
-          <a className="chip" href="/quiz">Retour au quiz</a>
-          <a className="chip" href="/">Retour aux champions</a>
+      <div className="p-6" style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'70vh'}}>
+        <div style={cardStyle}>
+          <h1 style={{fontSize:'2rem',marginBottom:12,textAlign:'center',color:'#fff',textShadow:'0 2px 8px #000, 0 0 2px #c89b3c',fontFamily: "'Cinzel', serif"}}>Résultats</h1>
+          <p className="text" style={{fontSize:'1.2rem',textAlign:'center'}}>Score : <strong>{score}/{questions.length}</strong> — {ratio}%</p>
+          <p className="text" style={{ marginTop: 8, textAlign:'center',fontWeight:600 }}>{msg}</p>
+          <div style={{ marginTop: 16, display: "flex", gap: 10, justifyContent:'center' }}>
+            <QuizButton onClick={startQuiz}>↻ Rejouer</QuizButton>
+            <a style={quizButton} href="/quiz">Retour au quiz</a>
+            <a style={quizButton} href="/">Retour aux champions</a>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="p-6">
-      <div className="card">
+    <div className="p-6" style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'70vh',background:'none',position:'relative'}}>
+      <Link to="/" style={{position:'absolute',left:0,top:0,margin:'1.5rem',zIndex:2,textDecoration:'none'}}>
+        <span style={{
+          display:'inline-block',
+          padding:'0.6rem 1.5rem',
+          borderRadius:'2rem',
+          border:'2.5px solid #c89b3c',
+          background:'#181818cc',
+          color:'#c89b3c',
+          fontWeight:700,
+          fontFamily: "'Cinzel', serif",
+          fontSize:'1rem',
+          boxShadow:'0 2px 8px #0002',
+          transition:'transform 0.15s',
+          cursor:'pointer',
+        }}
+          onMouseEnter={e=>e.currentTarget.style.transform='scale(1.07)'}
+          onMouseLeave={e=>e.currentTarget.style.transform='none'}
+        >
+          ← Retour
+        </span>
+      </Link>
+      <div style={cardStyle}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
-          <h2 className="section-title" style={{ margin: 0 }}>
+          <h2 style={{ margin: 0, fontFamily: "'Cinzel', serif", color:'#fff', fontSize:'1.3rem', textShadow:'0 1px 4px #000, 0 0 2px #c89b3c' }}>
             Question {idx + 1} / {questions.length}
           </h2>
-          <div className="chip">Score : {score}</div>
+          <div style={{...quizButton, fontSize:'1rem', padding:'0.5rem 1.2rem', background:'#232526', border:'2px solid #c89b3c', color:'#c89b3c', boxShadow:'none'}}>Score : {score}</div>
         </div>
 
-        <p className="text" style={{ fontSize: "1.05rem", marginTop: 8 }}>
+        <p className="text" style={{ fontSize: "1.15rem", marginTop: 18, marginBottom: 18, textAlign:'center', fontWeight:600, color:'#fff', fontFamily: "'Cinzel', serif" }}>
           {current.question}
         </p>
 
-        <div style={{ display: "grid", gap: 10, gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", marginTop: 14 }}>
+        <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", marginTop: 14 }}>
           {current.choices.map((ch) => {
             const isSel = selected === ch;
             const isGood = selected && ch === current.answer;
             const isBad = selected && ch === selected && ch !== current.answer;
             return (
-              <button
+              <QuizButton
                 key={ch}
-                className="chip"
-                style={{
-                  borderColor: isGood ? "#38b000" : isBad ? "#e74c3c" : "var(--line)",
-                  color: isGood ? "#38b000" : isBad ? "#e74c3c" : "var(--muted)",
-                  pointerEvents: selected ? "none" : "auto",
-                  transform: isSel ? "scale(0.98)" : "none"
-                }}
+                style={getChoiceStyle(isSel, isGood, isBad)}
                 onClick={() => selectChoice(ch)}
+                disabled={!!selected}
               >
                 {ch}
-              </button>
+              </QuizButton>
             );
           })}
         </div>
