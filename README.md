@@ -20,7 +20,7 @@ Une application web pour explorer les champions, objets et régions de League of
    npm install
    ```
 
-## ▶️ Lancement du projet
+##  Lancement du projet
 
 Pour démarrer le serveur de développement :
 ```bash
@@ -29,7 +29,7 @@ npm run dev -- --host
 
 > L’option `--host` permet d’accéder au site depuis d’autres appareils sur le même réseau. ( un mobile par exemple )
 
-## 📱 Accès depuis un mobile
+##  Accès depuis un mobile
 
 1. Assure-toi que ton téléphone et ton ordinateur sont sur le même réseau Wi-Fi.
 2. Récupère l’adresse IP locale de ton ordinateur (ex : `192.168.1.156`).
@@ -46,6 +46,6 @@ Les contributions sont les bienvenues !
 - Crée une branche
 - Propose une Pull Request
 
-## 📄 Licence
+##  Licence
 
 MIT
