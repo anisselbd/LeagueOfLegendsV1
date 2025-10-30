@@ -43,3 +43,12 @@ export async function getItemList(version, locale = "fr_FR") { // Récupère la 
   const { data } = await axios.get(url);
   return Object.values(data.data); 
 }
+
+export async function getItemById(version, id, locale = "fr_FR") { // Récupère un item précis par son id
+  const url = DDRAGON + "/cdn/" + version + "/data/" + locale + "/item.json";
+  const { data } = await axios.get(url);
+  const item = data?.data?.[id];
+  if (!item) return null;
+  return { ...item, id };
+}
+

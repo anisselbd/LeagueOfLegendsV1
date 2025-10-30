@@ -42,7 +42,7 @@ function SkinButton({ skin, idx, champId, champ, active, onClick, name }) {
 
 export default function ChampionDetail() {
   const { id } = useParams();
-  const { version, fetchAll } = useChampions();
+  const { version, getOrFetchVersion } = useChampions();
   const [champ, setChamp] = useState(null);
   const [skinIndex, setSkinIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -51,18 +51,16 @@ export default function ChampionDetail() {
   useEffect(() => {
     (async () => {
       try {
-        if (!version) await fetchAll();
-        const v = version || useChampions.getState().version;
+        const v = version || await getOrFetchVersion();
         const data = await getChampionDetail(v, id, "fr_FR");
         setChamp(data);
-        console.log("Détails du champion :", data);
       } catch (e) {
         setErr(e?.message ?? "Erreur");
       } finally {
         setLoading(false);
       }
     })();
-  }, [id, version, fetchAll]);
+  }, [id, version, getOrFetchVersion]);
 
 
   // Scroll en haut lors du changement de skin

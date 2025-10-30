@@ -24,7 +24,7 @@ export default function Regions() {
               <>
                 <img
                   className="region-img"
-                  src={import.meta.env.BASE_URL + 'src/assets/' + r.image}
+                  src={import.meta.env.BASE_URL + 'assets/' + r.image}
                   alt={r.id}
                 />
                 <div className="region-overlay" />

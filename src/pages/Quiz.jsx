@@ -232,8 +232,8 @@ export default function Quiz() {
           <p className="text" style={{ marginTop: 8, textAlign: 'center', fontWeight: 600 }}>{msg}</p>
           <div style={{ marginTop: 16, display: "flex", gap: 10, justifyContent: 'center' }}>
             <QuizButton onClick={startQuiz}>↻ Rejouer</QuizButton>
-            <a style={quizButton} href="/quiz">Retour au quiz</a>
-            <a style={quizButton} href="/">Retour aux champions</a>
+            <Link style={quizButton} to="/quiz">Retour au quiz</Link>
+            <Link style={quizButton} to="/">Retour aux champions</Link>
           </div>
         </div>
       </div>

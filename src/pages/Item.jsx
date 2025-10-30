@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getLatestVersion } from "../api/ddragon";
+import { useChampions } from "../store/useChampions";
 
 
 const Item = () => {
@@ -11,11 +11,12 @@ const Item = () => {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const itemsPerPage = 40;
+  const { getOrFetchVersion } = useChampions();
 
   useEffect(() => {
     async function fetchItems() {
       try {
-        const v = await getLatestVersion();
+        const v = await getOrFetchVersion();
         setVersion(v);
         
         const url = `https://ddragon.leagueoflegends.com/cdn/${v}/data/fr_FR/item.json`;
@@ -132,6 +133,7 @@ function Pagination({ items, itemsPerPage, page, setPage, version, search }) {
                   <img
                     src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image?.full}`}
                     alt={item.name}
+                    loading="lazy"
                     style={{ width: 100, height: 100, objectFit: 'contain', background: '#111', borderRadius: 4, marginBottom: 6 }}
                   />
                   <div style={{ fontWeight: 'bold', marginBottom: 2, textAlign: 'center', fontSize: 13 }}>{item.name}</div>

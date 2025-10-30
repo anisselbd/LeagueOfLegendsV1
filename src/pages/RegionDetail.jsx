@@ -41,7 +41,7 @@ export default function RegionDetail() {
           }}
         >
           <img
-            src={import.meta.env.BASE_URL + 'src/assets/' + region.image}
+            src={import.meta.env.BASE_URL + 'assets/' + region.image}
             alt={region.id}
             style={{
               width: "100%",

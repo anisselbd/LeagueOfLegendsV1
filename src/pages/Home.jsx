@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import heroBanner from "../assets/heroBanner.webp";
 
 const buttonStyle = {
   padding: '0.9rem 2.2rem',
@@ -48,7 +47,7 @@ export default function Home() {
         textAlign: 'center',
         padding: '3rem 1rem',
         minHeight: '90vh',
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${heroBanner})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${import.meta.env.BASE_URL + 'assets/heroBanner.webp'})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

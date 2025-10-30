@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getLatestVersion, getItemList } from "../api/ddragon";
+import { getItemById } from "../api/ddragon";
+import { useChampions } from "../store/useChampions";
 
 export default function ItemDetail() {
   const { id } = useParams();
@@ -8,20 +9,15 @@ export default function ItemDetail() {
   const [version, setVersion] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { getOrFetchVersion } = useChampions();
 
   useEffect(() => {
     async function fetchItem() {
       try {
-        const v = await getLatestVersion();
+        const v = await getOrFetchVersion();
         setVersion(v);
-  const items = await getItemList(v, "fr_FR");
-  // On charge la liste brute pour avoir accès aux clés
-  const url = `https://ddragon.leagueoflegends.com/cdn/${v}/data/fr_FR/item.json`;
-  const res = await fetch(url);
-  const data = await res.json();
-  const found = data.data[id];
-  if (found) found.id = id;
-  setItem(found);
+        const found = await getItemById(v, id, "fr_FR");
+        setItem(found);
       } catch (err) {
         setError("Erreur lors du chargement de l'item.");
       } finally {
