@@ -7,6 +7,7 @@ Une application web pour explorer les champions, objets et régions de League of
 - Liste des objets et régions
 - Quiz interactif
 - Navigation fluide entre les pages
+- Tracker LoL intégré afin de suivre les statistiques d'un joueur en temps réel ( à venir )
 
 ## 🛠️ Installation
 
