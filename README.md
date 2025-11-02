@@ -50,3 +50,6 @@ Les contributions sont les bienvenues !
 ##  Licence
 
 MIT
+
+
+Fais pas Anisse, les pull requests sont acceptées !
