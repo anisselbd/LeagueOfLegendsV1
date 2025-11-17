@@ -7,7 +7,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef();
 
-  // Fermer le menu si clic en dehors
+
   useEffect(() => {
     function handleClick(e) {
       if (open && menuRef.current && !menuRef.current.contains(e.target)) {

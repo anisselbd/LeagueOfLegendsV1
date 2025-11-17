@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import Champions from "./pages/Champions";
 import ChampionDetail from "./pages/ChampionDetail";
 import Regions from "./pages/Regions";

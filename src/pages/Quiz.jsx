@@ -4,9 +4,6 @@ import regionMap from "../data/championRegions.json";
 import { Link } from "react-router-dom";
 import '../index.css';
 
-
-
-
 const cardStyle = {
   background: 'rgba(20, 24, 34, 0.98)',
   borderRadius: '22px',
@@ -35,9 +32,6 @@ const quizButton = {
   outline: 'none',
   fontFamily: "'Cinzel', serif",
 };
-
-
-
 
 function QuizButton({ children, ...props }) {
   const [hover, setHover] = useState(false);
@@ -90,7 +84,7 @@ function buildQuestions(champions) {
   );
   const regions = Array.from(new Set(Object.values(regionMap)));
 
-  // Q1: Région ?
+
   champsOK.forEach(c => {
     const correct = regionMap[c.id];
     if (!correct) return;
@@ -103,7 +97,6 @@ function buildQuestions(champions) {
     });
   });
 
-  // Q2: Rôle principal ?
   champsOK.forEach(c => {
     const correct = c.tags?.[0];
     if (!correct) return;
@@ -116,11 +109,9 @@ function buildQuestions(champions) {
     });
   });
 
-  // Q3: Titre / épithète ?
   champsOK.forEach(c => {
-    const correct = c.title; // ex: "la Renarde à neuf queues"
+    const correct = c.title;
     if (!correct) return;
-    // prendre 3 autres titres aléatoires
     const others = pick(
       champsOK.filter(x => x.id !== c.id && x.title).map(x => x.title),
       3
@@ -134,7 +125,6 @@ function buildQuestions(champions) {
     });
   });
 
-  // Mélange global + on prend 10
   return pick(pool, 10);
 }
 
@@ -169,7 +159,6 @@ export default function Quiz() {
     if (selected) return;
     setSelected(choice);
     if (choice === current.answer) setScore(s => s + 1);
-    // passage auto à la question suivante après 900ms
     setTimeout(() => {
       if (idx + 1 < questions.length) {
         setIdx(i => i + 1);
@@ -223,7 +212,7 @@ export default function Quiz() {
     const ratio = Math.round((score / questions.length) * 100);
     const msg = ratio >= 80 ? "Grand maître du lore !" :
       ratio >= 60 ? "Solide connaissance !" :
-        ratio >= 40 ? "Pas mal, continue !" : "On s’échauffe 🔥";
+        ratio >= 40 ? "Pas mal, continue !" : "On s’échauffe !";
     return (
       <div className="p-6" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '70vh' }}>
         <div style={cardStyle}>

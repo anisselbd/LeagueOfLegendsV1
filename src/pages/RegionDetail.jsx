@@ -10,14 +10,12 @@ export default function RegionDetail() {
   const region = regionsData.find(r => r.id === id);
   const { champions, version, loading, fetchAll } = useChampions();
 
-  // S'assurer que les champions sont chargés au montage
   React.useEffect(() => {
     if (!champions || champions.length === 0) {
       fetchAll();
     }
   }, []);
 
-  // Filtrer les champions associés à la région
   const regionChampions = champions.filter(c => championRegions[c.id] === id);
 
   if (!region) return <p>Région inconnue.</p>;

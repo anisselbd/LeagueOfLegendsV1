@@ -1,6 +1,4 @@
 .footer {
-  /* position: sticky; */
-  /* bottom: 0; */
   z-index: 40;
   background: rgba(11, 14, 18, 0.95);
   backdrop-filter: blur(10px);

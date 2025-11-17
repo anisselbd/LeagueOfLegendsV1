@@ -1,4 +1,3 @@
-/* Effet de survol pour les cards d'items */
 .item-card-link:hover .item-card,
 .item-card-link:focus .item-card {
   transform: scale(1.07);
@@ -6,7 +5,7 @@
   border-color: #c89b3c;
   z-index: 2;
 }
-/* Champ de recherche personnalisé */
+
 input[type="text"].search-bar {
   background: #1d2734;
   color: white;
@@ -389,20 +388,19 @@ a {
   transform:scale(0.98)
 }
 
-/* ——— GRID: max 3 cartes par ligne ——— */
 .champions-grid{
   display:grid;
   gap:18px;
-  grid-template-columns: 1fr;              /* mobile: 1 */
+  grid-template-columns: 1fr;
 }
 @media (min-width: 680px){
-  .champions-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } /* tablet: 2 */
+  .champions-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } 
 }
 @media (min-width: 1024px){
-  .champions-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); } /* desktop: 3 MAX */
+  .champions-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
 
-/* ——— CARD ——— */
+
 .champ-card{
   display:flex;
   gap:16px;
@@ -420,7 +418,7 @@ a {
   border-color: rgba(90,176,255,.35);
 }
 
-/* ——— IMAGE ——— */
+
 .champ-img{
   width:86px;
   height:86px;
@@ -435,8 +433,8 @@ a {
   .champ-img{ width:96px; height:96px; flex-basis:96px; }
 }
 
-/* ——— TEXT ——— */
-.champ-body{ min-width:0; }                  /* text truncation safe */
+
+.champ-body{ min-width:0; }
 .champ-name{
   margin:0;
   font-weight:800;

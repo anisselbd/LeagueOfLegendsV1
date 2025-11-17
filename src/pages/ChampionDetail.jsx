@@ -63,7 +63,7 @@ export default function ChampionDetail() {
   }, [id, version, getOrFetchVersion]);
 
 
-  // Scroll en haut lors du changement de skin
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [skinIndex]);
@@ -77,7 +77,7 @@ export default function ChampionDetail() {
 
   return (
     <div>
-      {/* Hero avec splash */}
+
       <div className="hero">
         <AnimatePresence mode="wait">
           <motion.img
@@ -108,15 +108,12 @@ export default function ChampionDetail() {
         </div>
       </div>
 
-      {/* Corps */}
       <div className="container">
-        {/* Bio */}
         <section className="card">
           <h2 className="section-title">Histoire</h2>
           <p className="text">{lore || blurb}</p>
         </section>
 
-        {/* Stats rapides */}
         <section className="card">
           <h2 className="section-title">Difficulté & rôles</h2>
           <div className="stats-grid">
@@ -127,11 +124,9 @@ export default function ChampionDetail() {
           </div>
         </section>
 
-        {/* Compétences */}
         <section className="card">
           <h2 className="section-title">Compétences</h2>
 
-          {/* Passive */}
           {passive && (
             <div className="ability">
               <img className="ability-icon" src={passiveIcon(v, passive.image.full)} alt={passive.name} />
@@ -142,7 +137,6 @@ export default function ChampionDetail() {
             </div>
           )}
 
-          {/* Spells Q W E R */}
           {spells.map((sp, i) => (
             <div key={sp.id} className="ability">
               <img className="ability-icon" src={spellIcon(v, sp.image.full)} alt={sp.name} />
@@ -154,7 +148,6 @@ export default function ChampionDetail() {
           ))}
         </section>
 
-        {/* Skins */}
         {skins?.length > 1 && (
           <section className="card">
             <h2 className="section-title">Skins du champion</h2>

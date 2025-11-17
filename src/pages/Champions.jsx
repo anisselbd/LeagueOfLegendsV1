@@ -8,10 +8,10 @@ export default function Champions() {
   const { fetchAll, champions, version, loading } = useChampions();
   const [search, setSearch] = useState("");
   const [params] = useSearchParams();
-  const regionFilter = params.get("region"); // ex: "Ionia"
+  const regionFilter = params.get("region"); 
 
   useEffect(() => {
-    fetchAll(); // charge version + champions
+    fetchAll(); 
   }, []);
 
   const filtered = useMemo(() => {
@@ -19,7 +19,6 @@ export default function Champions() {
     return champions.filter((c) => {
       const nameMatch = c.name.toLowerCase().includes(q);
       if (!regionFilter) return nameMatch;
-      // regionMap utilise c.id (ex. "Ahri", "JarvanIV")
       const champRegion = regionMap[c.id];
       return nameMatch && champRegion === regionFilter;
     });
@@ -32,7 +31,6 @@ export default function Champions() {
       <div className="flex mb-4" style={{ gap: 12, alignItems: "center", flexWrap: "wrap" }}>
         <h1 className="text-3xl font-bold mb-6" style={{ textAlign: 'center', fontFamily: 'Cinzel, serif' }}>Champions League of Legends</h1>
 
-        {/* Affichage du filtre actif (si présent) */}
         {regionFilter && (
           <span className="chip" title="Filtre région actif">
             Région&nbsp;: <strong>{regionFilter}</strong>
@@ -65,7 +63,6 @@ export default function Champions() {
 
       <div className="champions-grid">
         {filtered.map((c) => {
-          // Image splash officielle : https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{championName}_0.jpg
           const splashUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${c.id}_0.jpg`;
           return (
             <Link
