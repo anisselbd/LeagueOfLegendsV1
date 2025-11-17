@@ -9,6 +9,4 @@ describe('useChampions store', () => {
     expect(result.current.loading).toBe(false);
     expect(result.current.error).toBeNull();
   });
-
-  // Pour tester fetchAll, il faudrait mocker l’API
 });

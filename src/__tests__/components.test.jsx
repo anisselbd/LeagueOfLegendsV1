@@ -45,7 +45,6 @@ describe('Pagination', () => {
       </MemoryRouter>
     );
     expect(screen.getByText(/Page/)).toBeInTheDocument();
-    // Le chiffre '1' est dans un <span> avec du texte, matcher avec une fonction
     const pageSpans = screen.getAllByText((content, element) =>
       element.textContent?.replace(/\s+/g, ' ').includes('Page 1 / 2')
     );

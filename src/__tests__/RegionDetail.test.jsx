@@ -10,7 +10,6 @@ describe('RegionDetail', () => {
         <RegionDetail />
       </MemoryRouter>
     );
-    // On vérifie juste que le composant se rend
     expect(screen.getByText(/Région inconnue/i)).toBeInTheDocument();
   });
 });

@@ -10,7 +10,6 @@ describe('Quiz', () => {
         <Quiz />
       </MemoryRouter>
     );
-    // Attend le bouton 'Lancer le quiz' (si le chargement est terminé)
     const btn = await screen.findByText(/Lancer le quiz/i, {}, { timeout: 2000 });
     expect(btn).toBeInTheDocument();
   });

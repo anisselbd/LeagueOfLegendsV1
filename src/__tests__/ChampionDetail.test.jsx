@@ -10,7 +10,6 @@ describe('ChampionDetail', () => {
         <ChampionDetail />
       </MemoryRouter>
     );
-    // On vérifie juste que le composant se rend
     expect(screen.getByText(/Chargement/i)).toBeInTheDocument();
   });
 });

@@ -10,7 +10,6 @@ describe('Header', () => {
         <Header />
       </MemoryRouter>
     );
-    // Utilise getAllByText et vérifie qu'au moins un élément correspond
     const matches = screen.getAllByText((content, element) =>
       element.textContent?.replace(/\s+/g, ' ').includes('League of Legends')
     );
