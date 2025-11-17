@@ -3,7 +3,10 @@ import { useParams, Link } from "react-router-dom";
 import regionsData from "../data/regions.json";
 import championRegions from "../data/championRegions.json";
 import { useChampions } from "../store/useChampions";
-import { splashUrl } from "../api/ddragon";
+
+function splashUrl(championId) {
+  return `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_0.jpg`;
+}
 
 export default function RegionDetail() {
   const { id } = useParams();
@@ -39,7 +42,7 @@ export default function RegionDetail() {
           }}
         >
           <img
-            src={import.meta.env.BASE_URL + 'assets/' + region.image}
+              src={'/assets/' + region.image}
             alt={region.id}
             style={{
               width: "100%",

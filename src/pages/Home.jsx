@@ -47,7 +47,7 @@ export default function Home() {
         textAlign: 'center',
         padding: '3rem 1rem',
         minHeight: '90vh',
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${import.meta.env.BASE_URL + 'assets/heroBanner.webp'})`,
+        backgroundImage: "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(/assets/heroBanner.webp)",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

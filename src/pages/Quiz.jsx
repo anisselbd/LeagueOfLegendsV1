@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useChampions } from "../store/useChampions";
 import regionMap from "../data/championRegions.json";
 import { Link } from "react-router-dom";

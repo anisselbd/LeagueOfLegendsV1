@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/League_of_Legends_icon.svg";
@@ -22,7 +23,9 @@ export default function Header() {
     <header className="header">
       <div className="header-flex">
         <Link to="/" className="logo-area">
-          <img src={logo} alt="LoL Logo" className="logo-icon" />
+          {logo ? (
+            <img src={logo} alt="LoL Logo" className="logo-icon" />
+          ) : null}
         </Link>
         <div className="header-center">
           <span className="logo-text">League <span>of </span>Legends</span>

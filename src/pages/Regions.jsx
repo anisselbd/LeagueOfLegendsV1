@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from "react";
 import regionsData from "../data/regions.json";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +25,7 @@ export default function Regions() {
               <>
                 <img
                   className="region-img"
-                  src={import.meta.env.BASE_URL + 'assets/' + r.image}
+                      src={'assets/' + r.image}
                   alt={r.id}
                 />
                 <div className="region-overlay" />

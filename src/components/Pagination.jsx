@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Pagination({ items, itemsPerPage, page, setPage, version, search }) {
+function Pagination({ items = [], itemsPerPage, page, setPage, version, search }) {
   const filtered = items.filter(item =>
     item.name &&
     item.name.trim() !== '' &&

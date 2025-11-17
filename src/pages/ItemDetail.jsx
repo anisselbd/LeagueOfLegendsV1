@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getItemById } from "../api/ddragon";
 import { useChampions } from "../store/useChampions";
