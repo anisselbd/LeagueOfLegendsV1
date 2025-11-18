@@ -12,10 +12,12 @@ input[type="text"].search-bar {
   border: 1px solid var(--line);
   transition: border-color .2s;
 }
+
 input[type="text"].search-bar:focus {
   outline: none;
   border-color: var(--accent);
 }
+
 :root {
   --bg: #0b0e12;
   --card: #11161c;
@@ -331,7 +333,7 @@ a {
   border-radius: 18px;
   overflow: hidden;
   min-height: 220px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.32);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .32);
   cursor: pointer;
   transition: transform .2s, box-shadow .2s;
   display: flex;
@@ -339,10 +341,12 @@ a {
   justify-content: flex-end;
   background: #11161c;
 }
+
 .region-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 16px 48px rgba(0,0,0,.38);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .38);
 }
+
 .region-card .region-img {
   position: absolute;
   inset: 0;
@@ -351,14 +355,16 @@ a {
   object-fit: cover;
   z-index: 1;
 }
+
 .region-card .region-overlay {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(17,22,28,0.92) 0%, rgba(17,22,28,0.45) 60%, rgba(17,22,28,0.08) 100%);
+  background: linear-gradient(to top, rgba(17, 22, 28, 0.92) 0%, rgba(17, 22, 28, 0.45) 60%, rgba(17, 22, 28, 0.08) 100%);
   z-index: 2;
 }
+
 .region-card .region-title {
   position: relative;
   z-index: 3;
@@ -367,7 +373,7 @@ a {
   font-weight: 800;
   color: #fff;
   padding: 18px 0 14px 0;
-  text-shadow: 0 2px 12px rgba(0,0,0,.45);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .45);
   background: none;
   margin: 0;
 }
@@ -385,70 +391,87 @@ a {
 }
 
 .chip:active {
-  transform:scale(0.98)
+  transform: scale(0.98)
 }
 
-.champions-grid{
-  display:grid;
-  gap:18px;
+.champions-grid {
+  display: grid;
+  gap: 18px;
   grid-template-columns: 1fr;
 }
-@media (min-width: 680px){
-  .champions-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } 
+
+@media (min-width: 680px) {
+  .champions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
-@media (min-width: 1024px){
-  .champions-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+@media (min-width: 1024px) {
+  .champions-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 
-.champ-card{
-  display:flex;
-  gap:16px;
-  align-items:center;
-  padding:14px;
-  border-radius:18px;
-  background: linear-gradient(180deg, rgba(17,22,28,.85), rgba(17,22,28,.65));
-  border:1px solid var(--line);
-  box-shadow: 0 8px 24px rgba(0,0,0,.28);
+.champ-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(17, 22, 28, .85), rgba(17, 22, 28, .65));
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-.champ-card:hover{
+
+.champ-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 34px rgba(0,0,0,.38);
-  border-color: rgba(90,176,255,.35);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .38);
+  border-color: rgba(90, 176, 255, .35);
 }
 
 
-.champ-img{
-  width:86px;
-  height:86px;
-  flex:0 0 86px;
-  border-radius:14px;
-  object-fit:cover;
-  background:#0c131a;
-  border:1px solid var(--line);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.03), 0 4px 18px rgba(0,0,0,.35);
+.champ-img {
+  width: 86px;
+  height: 86px;
+  flex: 0 0 86px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #0c131a;
+  border: 1px solid var(--line);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .03), 0 4px 18px rgba(0, 0, 0, .35);
 }
-@media (min-width:1024px){
-  .champ-img{ width:96px; height:96px; flex-basis:96px; }
+
+@media (min-width:1024px) {
+  .champ-img {
+    width: 96px;
+    height: 96px;
+    flex-basis: 96px;
+  }
 }
 
 
-.champ-body{ min-width:0; }
-.champ-name{
-  margin:0;
-  font-weight:800;
-  letter-spacing:.2px;
+.champ-body {
+  min-width: 0;
 }
-.champ-title{
-  margin:.25rem 0 0;
-  color:var(--muted);
-  font-style:italic;
-  opacity:.95;
+
+.champ-name {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: .2px;
 }
-.champ-region{
-  margin:.35rem 0 0;
-  font-size:.85rem;
-  color:var(--muted);
-  opacity:.9;
+
+.champ-title {
+  margin: .25rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+  opacity: .95;
+}
+
+.champ-region {
+  margin: .35rem 0 0;
+  font-size: .85rem;
+  color: var(--muted);
+  opacity: .9;
 }

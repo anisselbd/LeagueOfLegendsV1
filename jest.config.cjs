@@ -1,12 +1,12 @@
 module.exports = {
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest-setup.js'],
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["<rootDir>/jest-setup.js"],
   moduleNameMapper: {
-     '^.+\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    '\\.svg$': '<rootDir>/__mocks__/svgMock.js',
+    "^.+\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    "\\.svg$": "<rootDir>/__mocks__/svgMock.js",
   },
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
+    "^.+\\.jsx?$": "babel-jest",
   },
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)'],
+  testMatch: ["**/__tests__/**/*.[jt]s?(x)"],
 };
