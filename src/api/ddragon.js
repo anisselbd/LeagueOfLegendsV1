@@ -3,13 +3,13 @@ import axios from "axios";
 const DDRAGON = "https://ddragon.leagueoflegends.com";
 
 export async function getLatestVersion() {
-  // Récupère la dernière version disponible de League of Legends
+  // Récupère la dernière v dispo de LoL
   const { data } = await axios.get(DDRAGON + "/api/versions.json");
   return data[0];
 }
 
 export async function getChampionList(version, locale = "fr_FR") {
-  // Récupère la liste des champions pour une version et une locale données
+  // Récupère la liste des champs pour une v et une locale données
   const url =
     DDRAGON + "/cdn/" + version + "/data/" + locale + "/champion.json";
   const { data } = await axios.get(url);
@@ -44,7 +44,7 @@ export function splashUrl(champId, skinNum = 0) {
   );
 }
 export function loadingUrl(champId, skinNum = 0) {
-  // Génère l'URL de l'image de chargement d'un champion pour un skin donné
+  // Génère l'URL de l'image de chargement d'avant game d'un champion pour un skin donné
   return (
     DDRAGON + "/cdn/img/champion/loading/" + champId + "_" + skinNum + ".jpg"
   );

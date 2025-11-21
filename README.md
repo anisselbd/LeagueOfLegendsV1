@@ -9,7 +9,7 @@ Une application web pour explorer les champions, objets et régions de League of
 - Navigation fluide entre les pages
 - Tracker LoL intégré afin de suivre les statistiques d'un joueur en temps réel ( à venir )
 
-## 🛠️ Installation
+##  Installation
 
 1. Clone le dépôt :
    ```bash
