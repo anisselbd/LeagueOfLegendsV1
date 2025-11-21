@@ -52,4 +52,4 @@ Les contributions sont les bienvenues !
 MIT
 
 
-Fais pas Anisse, les pull requests sont acceptées !
+Fais par Anisselbd, les pull requests sont acceptées !
